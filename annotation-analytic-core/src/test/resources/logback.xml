@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false" scan="true" scanPeriod="30 seconds">
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<Pattern>%level %date [%thread] [%file:%line] %msg%n</Pattern>
+		</encoder>
+	</appender>
+
+<!-- 	<appender name="ERRORLOG" class="ch.qos.logback.core.FileAppender">
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>ERROR</level>
+		</filter>
+		<file>../logs/analytic-error.log</file>
+		<Append>false</Append>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<Pattern>%level %date [%thread] [%file:%line] %msg%n</Pattern>
+		</encoder>
+	</appender>
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>../logs/analytic.log</file>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<Pattern>%level %date [%thread] [%file:%line] %msg%n</Pattern>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>../logs/analytic.log.%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
+			<maxHistory>3</maxHistory>
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>1GB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+	</appender> -->
+	
+	<logger name="com.github.annotation.analytic.core" level="TRACE" />
+	
+	<root level="INFO">
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration>
